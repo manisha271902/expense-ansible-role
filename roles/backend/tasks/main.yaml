@@ -54,7 +54,7 @@
 - name: Establish connection  and import mysql data
   community.mysql.mysql_db:
     name: all #name=all may only be provided if state is dump or import.
-    login_user: "{{ login_user}}"
+    login_user: "{{ login_user }}"
     login_password: "{{login_password}}"
     login_host: "{{login_host}}"   
 #paina varak connection establish aytadi, now dump/import data
