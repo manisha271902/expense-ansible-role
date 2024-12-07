@@ -1,0 +1,9 @@
+- name: "configure {{ component }} server"
+  hosts: "{{ component }}"
+  become: yes
+  roles:
+  - "{{ component }}"
+
+
+
+  #seperate ga kakunda itla kalipi run cheyochu back, front and db
