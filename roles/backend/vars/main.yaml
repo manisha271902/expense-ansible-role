@@ -2,3 +2,5 @@ login_user: root
 login_password: ExpenseApp@1
 login_host: db.manisha.fun
 DB_HOST: db.manisha.fun
+app_location: /app
+component: backend

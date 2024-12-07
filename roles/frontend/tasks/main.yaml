@@ -15,27 +15,35 @@
 #     state: absent
 #itla star uiste work aytale, so 
 
-- name: delete default website
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
+- name: run app pre-requisites
+  tags:
+  - deployment
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-pre-req
+#uncomemnting below as we have added common here *************************************************************************
+# - name: delete default website
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: absent
 
-- name: create html directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
+# - name: create html directory
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: directory
 
 
-- name: Download frontend content
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-    dest: /usr/share/nginx/html
+# - name: Download frontend content
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+#     dest: /usr/share/nginx/html
 
-- name: unzip frontend code
-  ansible.builtin.unarchive:
-    src: /usr/share/nginx/html/expense-frontend-v2.zip # by default checks in ansible server
-    dest: /usr/share/nginx/html
-    remote_src: yes
+# - name: unzip frontend code
+#   ansible.builtin.unarchive:
+#     src: /usr/share/nginx/html/expense-frontend-v2.zip # by default checks in ansible server
+#     dest: /usr/share/nginx/html
+#     remote_src: yes
+#***********************************************************************************************************
 
 # if there is change in configuration only, then you need to restart nginx
 - name: Copy expense.conf
