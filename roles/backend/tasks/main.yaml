@@ -59,7 +59,7 @@
     login_host: "{{login_host}}"   
 #paina varak connection establish aytadi, now dump/import data
     target: /app/schema/backend.sql
-    state: dump
+    state: import
 
 - name: deamon reload.
   ansible.builtin.systemd_service:
