@@ -34,6 +34,8 @@
 #     dest: /app
 #     remote_src: yes
 - name: install npm dependancies
+  tags:
+  - deployment
   ansible.builtin.command:
     npm install
   args:         #paina command run chese mundhi ee directory ki change avvu ani ansible ki chepthunam manam. And pakage.json ekada untado akade npm install run aytadi
