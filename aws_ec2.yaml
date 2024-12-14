@@ -1,6 +1,6 @@
-# demo.aws_ec2.yml
+# us east 1 region lo manakuna ec2 instance anni query cheyamani
 plugin: amazon.aws.aws_ec2
-
+#ec2 plugin use chesi aws ki ansible connect aytadi
 # This sets the region. If empty (the default) default this will include all regions, except possibly
 # restricted ones like us-gov-west-1 and cn-north-1.
 regions:
