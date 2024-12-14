@@ -5,3 +5,9 @@ plugin: amazon.aws.aws_ec2
 # restricted ones like us-gov-west-1 and cn-north-1.
 regions:
 - us-east-1
+
+
+#we need only specific instances
+keyed_groups:
+- key: tags.Application
+  seperator: ''
