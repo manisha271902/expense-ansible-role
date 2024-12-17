@@ -1,25 +1,43 @@
-# us east 1 region lo manakuna ec2 instance anni query cheyamani
-plugin: amazon.aws.aws_ec2
-#ec2 plugin use chesi aws ki ansible connect aytadi
-# This sets the region. If empty (the default) default this will include all regions, except possibly
-# restricted ones like us-gov-west-1 and cn-north-1.
+plugin: amazon.aws.aws_ec2.yaml
 regions:
 - us-east-1
-
-
-#we need only specific instances
 keyed_groups:
 - key: tags['Name']
   prefix: ''   #not needed here
   parent_group: ''
-#ikadi varak above ansible anni instances name teskunatdi, next below name backend start ayevi filter chestadi
 filters:
-  # This selects only running instances with tag `Environment` tag set to `dev`.
   tag: Name: "Backend*"
 compose:
-  # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
-  #private ip ni fectch cheyamni chepthunam
   ansible_host: private_ip_address
 
 
 #us-east-1 lo name backend tho start aye instances anni ostay
+
+
+
+
+# # us east 1 region lo manakuna ec2 instance anni query cheyamani
+# plugin: amazon.aws.aws_ec2
+# #ec2 plugin use chesi aws ki ansible connect aytadi
+# # This sets the region. If empty (the default) default this will include all regions, except possibly
+# # restricted ones like us-gov-west-1 and cn-north-1.
+# regions:
+# - us-east-1
+
+
+# #we need only specific instances
+# keyed_groups:
+# - key: tags['Name']
+#   prefix: ''   #not needed here
+#   parent_group: ''
+# #ikadi varak above ansible anni instances name teskunatdi, next below name backend start ayevi filter chestadi
+# filters:
+#   # This selects only running instances with tag `Environment` tag set to `dev`.
+#   tag: Name: "Backend*"
+# compose:
+#   # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
+#   #private ip ni fectch cheyamni chepthunam
+#   ansible_host: private_ip_address
+
+
+# #us-east-1 lo name backend tho start aye instances anni ostay
