@@ -11,7 +11,7 @@ filters:
   tag:Name: 'Backend*'
 
 compose:
-  ansible_host: private_ip
+  ansible_host: private-ip-address
 
 
 #us-east-1 lo name backend tho start aye instances anni ostay
