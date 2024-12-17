@@ -15,7 +15,7 @@ tasks:
 
 - name: Show all instance details
   ansible.builtin.debug:
-      msg: "Printing ec2 instances info {{ec2_instances}}.
+      msg: "Printing ec2 instances info {{ec2_instances}}."
 
 # filters:
 #   tag:Name: 'Backend*'
