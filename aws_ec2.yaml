@@ -1,27 +1,17 @@
 plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1
-# keyed_groups:
-#  - key: tags['Name']
-#    prefix: ''  
-#    parent_group: ''
-tasks:
-- name: Get EC2 instance details
-  amazon.aws.ec2_instance_info:
-    region: us-east-1
-    filters:
-      "tag:Name": "Backend*"
-  register: ec2_instances
+keyed_groups:
+ - key: tags['Name']
+   prefix: ''  
+   parent_group: ''
 
-- name: Show all instance details
-  ansible.builtin.debug:
-      msg: "Printing ec2 instances info {{ec2_instances}}."
 
-# filters:
-#   tag:Name: 'Backend*'
+filters:
+  tag:Name: 'Backend*'
 
-# compose:
-#   ansible_host: private_ip_address
+compose:
+  ansible_host: private_ip
 
 
 #us-east-1 lo name backend tho start aye instances anni ostay
