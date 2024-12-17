@@ -9,5 +9,17 @@ regions:
 
 #we need only specific instances
 keyed_groups:
-- key: tags.Application
-  seperator: ''
+- key: tags['Name']
+  prefix: backend
+  parent_group: "project"
+#ikadi varak above ansible anni instances name teskunatdi, next below name backend start ayevi filter chestadi
+filters:
+  # This selects only running instances with tag `Environment` tag set to `dev`.
+  tag: Name: "Backend*"
+compose:
+  # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
+  #private ip ni fectch cheyamni chepthunam
+  ansible_host: private_ip_address
+
+
+#us-east-1 lo name backend tho start aye instances anni ostay
