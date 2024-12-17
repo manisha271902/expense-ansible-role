@@ -14,7 +14,7 @@ tasks:
   register: ec2_instances
 
 - name: Show all instance details
-  debug:
+  ansible.builtin.debug:
     var: ec2_instances
 
 # filters:
