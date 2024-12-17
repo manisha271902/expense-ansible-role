@@ -10,8 +10,8 @@ regions:
 #we need only specific instances
 keyed_groups:
 - key: tags['Name']
-  prefix: backend
-  parent_group: "project"
+  prefix: ''   #not needed here
+  parent_group: ''
 #ikadi varak above ansible anni instances name teskunatdi, next below name backend start ayevi filter chestadi
 filters:
   # This selects only running instances with tag `Environment` tag set to `dev`.
