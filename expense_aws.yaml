@@ -1,17 +1,17 @@
 - name: create ec2 and r53 records
   hosts: localhost
   vars:
-    zone: daws78s.online
+    zone: manisha.fun
     instances:
-    - db
-    - backend
-    - frontend
+    - DB
+    - BackenD
+    - FrontenD
   tasks:
   - name: create ec2 instances
     amazon.aws.ec2_instance:
       instance_type: t2.micro
       name: "{{ item }}"
-      security_group: allow-everything #replace with you AWS values
+      security_group: sg-0210a7b27894140c9 #replace with you AWS values
       image_id: ami-090252cbe067a9e58
       tags:
         Name: "{{ item }}"
