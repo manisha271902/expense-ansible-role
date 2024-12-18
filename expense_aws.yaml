@@ -6,7 +6,7 @@
       instance_type: t2.micro
       name: "{{ item }}"
       security_group: sample #replace with you AWS values
-      image_id: ami-090252cbe067a9e58
+      image_id: ami-09c813fb71547fc4f
       tags:
         Name: "{{item}}"
     loop: 
