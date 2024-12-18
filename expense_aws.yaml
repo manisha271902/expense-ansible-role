@@ -2,10 +2,10 @@
   hosts: localhost
   vars:
     zone: manisha.fun
-    instances:
-    - DB
-    - BackenD
-    - FrontenD
+  #   instances:
+  #   - DB
+  #   - BackenD
+  #   - FrontenD
   tasks:
   - name: create ec2 instances
     amazon.aws.ec2_instance:
@@ -13,9 +13,10 @@
       name: "{{ item }}"
       security_group: sg-0210a7b27894140c9 #replace with you AWS values
       image_id: ami-090252cbe067a9e58
-      tags:
-        Name: "{{ item }}"
-    loop: "{{ instances }}"
+    loop: 
+    -DB
+    -BackenD
+    -FrontenD
     register: ec2_instances_info
   - name: print the o/p
     ansible.builtin.debug:
