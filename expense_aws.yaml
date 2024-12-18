@@ -16,9 +16,9 @@
       tags:
         Name: "{{item}}"
     loop: 
-    -DB
-    -BackenD
-    -FrontenD
+    - DB
+    - BackenD
+    - FrontenD
     register: ec2_instances_info
   - name: print the o/p
     ansible.builtin.debug:
