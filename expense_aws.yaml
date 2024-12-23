@@ -17,3 +17,10 @@
   - name: print the o/p
     ansible.builtin.debug:
       msg: "The info: {{ec2_instances_info}}"
+  - name: create r53 records
+    amazon.aws.route53:
+    state: present
+    zone: manisha.fun
+    record: db.manisha.fun
+    type: A
+    value: 
